@@ -23,7 +23,7 @@ def read_and_clean(include_returns=False):
         df = df.merge(returns_df, on='Order ID', how='left')
 
     # Drop rows missing essential numeric or time information
-    df = df.dropna(subset=['Order Date', 'Sales', 'Profit'])
+    df = df.dropna()
 
     # Create year and month columns
     df['Year'] = df['Order Date'].dt.year
